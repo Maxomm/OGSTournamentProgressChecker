@@ -5,6 +5,7 @@ build/
 dist/
 wheels/
 *.egg-info
+tournament_cli.py
 
 # Virtual environments
 .venv
