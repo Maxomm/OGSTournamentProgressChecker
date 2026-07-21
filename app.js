@@ -71,17 +71,23 @@ function renderResults(username, tournaments) {
     return;
   }
 
+  const sortedTournaments = tournaments
+    .map((tournament) => ({
+      tournament,
+      progress: summarizeTournamentProgress(tournament),
+    }))
+    .sort((a, b) => b.progress.percent - a.progress.percent);
+
   results.innerHTML = `
     <div class="results-header">
       <h2>${tournaments.length} public tournament${tournaments.length === 1 ? "" : "s"} found</h2>
       <p>for ${username}</p>
     </div>
     <ul class="tournament-list">
-      ${tournaments
-        .map((tournament) => {
+      ${sortedTournaments
+        .map(({ tournament, progress }) => {
           const id = tournament.id;
           const name = tournament.name || `Tournament ${id}`;
-          const progress = summarizeTournamentProgress(tournament);
 
           return `
             <li class="tournament-item">
@@ -95,7 +101,7 @@ function renderResults(username, tournaments) {
                   <div class="progress-fill ${progress.tone}" style="width: ${progress.percent}%"></div>
                 </div>
               </div>
-              <a href="https://online-go.com/tournament/${id}" target="_blank" rel="noreferrer">Open OGS</a>
+              <a href="https://online-go.com/tournament/${id}" target="_blank" rel="noreferrer" aria-label="Open tournament on OGS">&#8599;</a>
             </li>
           `;
         })

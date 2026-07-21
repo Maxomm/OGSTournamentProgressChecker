@@ -69,6 +69,17 @@ h1 {
   white-space: nowrap;
 }
 
+.title-link {
+  color: inherit;
+  text-decoration-color: rgba(138, 209, 255, 0.75);
+  text-underline-offset: 0.12em;
+}
+
+.title-link:hover,
+.title-link:focus-visible {
+  color: var(--accent-strong);
+}
+
 .lookup-form {
   margin: 2rem auto 0;
   display: flex;
@@ -265,20 +276,81 @@ h1 {
 
 @media (max-width: 640px) {
   .shell {
-    padding: 1rem;
+    gap: 1rem;
+    padding: 0.8rem;
+  }
+
+  .hero,
+  .results {
+    border-radius: 20px;
+  }
+
+  .hero {
+    padding: 1.3rem 1rem 1.2rem;
+  }
+
+  h1 {
+    white-space: normal;
+    line-height: 1.1;
+  }
+
+  .lookup-form {
+    width: 100%;
+    margin-top: 1.2rem;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .lookup-form input,
+  .lookup-form button {
+    width: 100%;
+    height: 3.1rem;
   }
 
   .lookup-form button {
-    width: 100%;
+    min-width: 0;
+  }
+
+  .results {
+    padding: 1rem;
+  }
+
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
   .tournament-item {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.9rem;
   }
 
   .progress-meta {
     flex-direction: column;
     gap: 0.3rem;
+  }
+
+  .tournament-item a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 2.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(138, 209, 255, 0.42);
+    background: rgba(138, 209, 255, 0.08);
+  }
+}
+
+@media (max-width: 420px) {
+  .results-header h2 {
+    font-size: 1.05rem;
+  }
+
+  .tournament-item span {
+    font-size: 0.9rem;
   }
 }
