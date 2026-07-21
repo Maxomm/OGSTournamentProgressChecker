@@ -1,5 +1,5 @@
-# OGS Tournament Tracker
+# OGS Tournament Progress Checker
 
-Site that fetches public Online Go Server tournaments from a username to check their progress.
+Site that checks the progress of your public https://online-go.com/ tournaments.
 
-https://maxomm.github.io/go_tournament_tracker/
+https://maxomm.github.io/OGSTournamentProgressChecker/
