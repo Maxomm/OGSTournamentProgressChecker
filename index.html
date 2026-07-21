@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OGS Tournament Tracker</title>
+    <meta
+      name="description"
+      content="Fetch public Online Go Server tournaments for a username."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://online-go.com">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="title">
+        <p class="eyebrow">Online Go Server</p>
+        <h1 id="title">Fetch your tournaments by entering your ogs username</h1>
+
+        <form id="lookup-form" class="lookup-form">
+          <label class="sr-only" for="username">OGS username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            autocomplete="username"
+            spellcheck="false"
+            placeholder="username"
+            required
+          >
+          <button type="submit">Go</button>
+        </form>
+
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="results" class="results" aria-live="polite"></section>
+    </main>
+  </body>
+</html>
