@@ -95,7 +95,7 @@ function renderResults(username, tournaments) {
                 <strong>${name}</strong>
                 <div class="progress-meta ${progress.tone}">
                   <span>${progress.label}</span>
-                  <span>${progress.remaining === null ? "" : `${progress.remaining} game${progress.remaining === 1 ? "" : "s"} left`}</span>
+                  <span>${progress.remaining === null ? "" : `${progress.remaining} game${progress.remaining === 1 ? "" : "s"} until next round`}</span>
                 </div>
                 <div class="progress-track" aria-hidden="true">
                   <div class="progress-fill ${progress.tone}" style="width: ${progress.percent}%"></div>
